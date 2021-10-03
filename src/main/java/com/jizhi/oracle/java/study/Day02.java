@@ -360,7 +360,117 @@ public class Day02 {
     static class ExtendTwelve{
         public static void main(String[] args) {
             Scanner scanner = new Scanner(System.in);
+            int identity;
+            double money;
+            System.out.print("是否是会员（其值为0/1,0表示为非会员，1表示为会员）：");
+            identity = scanner.nextInt();
+            System.out.print("输入购物金额：");
+            money = scanner.nextDouble();
+            if (identity == 0) {
+                if (money >= 100) {
+                    money *= 0.9;
+                }
+            } else {
+                if (money >= 200) {
+                    money *= 0.75;
+                } else {
+                    money *= 0.8;
+                }
+            }
+            System.out.println("购物金额为：" + money);
+        }
+    }
 
+    /**
+     * 训练描述
+     * <p>
+     * 某人准备去海南旅游，现在要订购机票。机票的价格受季节旺季、淡季的影响，头等舱和经济舱价格也不同。
+     * 假设机票原价假设为5000元（键盘录入），4-10月为旺季，旺季头等舱打9折，经济舱打8折，淡季头等舱打5折，经济舱打4折。
+     * 编写程序，使用嵌套if选择结构根据出行的月份和选择的仓位输出实际的机票价格
+     * 操作步骤描述
+     * <p>
+     * 1.创建键盘录入对象
+     * 2.创建int类型的money表示机票价格，int类型的month表示月份
+     * 3.通过键盘录入给变量money和month赋值
+     * 4.定义int类型的变量type表示机票的类型和double类型的变量discount表示折扣率
+     * 5.通过键盘录入给变量type赋值
+     * 6.使用if语句根据type和month的值，计算实际的机票价格
+     * 7.打印最后的结果
+     */
+    static class ExtendThirteen {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int money, month, type;
+            System.out.print("输入机票价格：");
+            money = scanner.nextInt();
+            System.out.print("输入月份：");
+            month = scanner.nextInt();
+            System.out.print("输入机票类型（0：经济舱，1：头等舱）：");
+            type = scanner.nextInt();
+            switch (month) {
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    if (type == 0) {
+                        money *= 0.8;
+                    } else if (type == 1) {
+                        money *= 0.9;
+                    }
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                case 11:
+                case 12:
+                    if (type == 0) {
+                        money *= 0.4;
+                    } else if (type == 1) {
+                        money *= 0.5;
+                    }
+                    break;
+            }
+            System.out.println("当前机票价格为：" + money);
+        }
+    }
+
+    /**
+     * 训练描述
+     * 某同学参加计算机大赛：
+     * 		如果获得第1名，将参加清华大学组织的1个月夏令营；
+     * 		如果或得第2名，将奖励联想笔记本电脑一部；
+     * 		如果获得第3名，将奖励移动硬盘一个；
+     * 否则没有任何奖励；
+     * 操作步骤描述
+     *
+     * 分析：（此题目采用if和switch都可以，在这里采用switch）
+     * 		1.创建键盘录入对象
+     * 		2.定义int类型的变量rank表示名次，并通过键盘录入赋值
+     * 		3.使用switch判断，根据rank不同的值，打印不同的内容
+     */
+    static class ExtendFourteen{
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            int rank;
+            System.out.print("输入名次：");
+            rank = scanner.nextInt();
+            switch (rank){
+                case 1:
+                    System.out.println("参加清华大学组织的1个月夏令营");
+                    break;
+                case 2:
+                    System.out.println("奖励联想笔记本电脑一部");
+                    break;
+                case 3:
+                    System.out.println("奖励移动硬盘一个");
+                    break;
+                default:
+                    System.out.println("无奖励");
+                    break;
+            }
         }
     }
 
