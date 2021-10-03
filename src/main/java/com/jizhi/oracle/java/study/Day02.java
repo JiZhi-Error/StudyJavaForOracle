@@ -283,6 +283,83 @@ public class Day02 {
                     System.out.println("别瞎输入");
                     break;
             }
+        }
+    }
+
+    /**
+     * 某人想买车，买什么车决定于此人在银行有多少存款(键盘录入)。
+     * 如果此人的存款超过500万，则买雪铁龙DS9；
+     * 否则，如果此人的存款超过100万，则买雪铁龙C6；
+     * 否则，如果此人的存款超过50万，则买雪铁龙C5；
+     * 否则，如果此人的存款超过10万，则买雪铁龙爱丽舍；
+     * 否则此人买捷安特。
+     */
+    static class ExtendTen {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("输入存款（万元）：");
+            int money = scanner.nextInt();
+            if (money >= 500) {
+                System.out.println("买雪铁龙DS9");
+            } else if (money >= 100) {
+                System.out.println("买雪铁龙C6");
+            } else if (money >= 50) {
+                System.out.println("买雪铁龙C5");
+            } else if (money >= 10) {
+                System.out.println("买雪铁龙爱丽舍");
+            } else {
+                System.out.println("买捷安特");
+            }
+        }
+    }
+
+    /**
+     * 练描述
+     * 学校举行运动会，百米赛跑成绩在10秒以内的学生有资格进决赛，根据性别分为男子组和女子组。
+     * 操作步骤描述
+     *
+     * 1.创建键盘录入对象
+     * 	2.定义double类型的变量score用于接收成绩，定义String类型的变量gender用于接收性别
+     * 	3.给score和gender赋值
+     * 	4.首先要判断是否能够进入决赛
+     * 	5.在确保进入决赛的情况下，再判断是进入男子组，还是进入女子组
+     */
+    static class ExtendEleven{
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            double score;
+            String gender;
+            System.out.print("输入成绩：");
+            score = scanner.nextInt();
+            System.out.print("输入性别");
+            scanner.nextLine();
+            gender = scanner.nextLine();
+            if (score<10){
+                System.out.println("进入"+gender+"子组决赛");
+            }
+        }
+    }
+
+    /**
+     * 训练描述
+     * 某商场购物可以打折，具体办法如下：
+     * 		普通顾客购满100元打9折
+     * 		会员购物打8折
+     * 		会员购物满200元打7.5折
+     * 	请根据此优惠计划进行购物结算
+     * 操作步骤描述
+     *
+     * 1.创建键盘录入对象
+     * 		2.定义int类型的变量identity（其值为0/1,0表示为非会员，1表示为会员），double类型的变量money表示购物金额
+     * 		3.通过键盘录入给变量identity和变量money赋值
+     * 		4.使用嵌套if选择结构实现
+     * 		5.先判断顾客是否是会员
+     * 			(1)非会员，直接打9折
+     * 			(2)会员，接着判断顾客购物是否达到相应的打折的数量要求，根据结果做不同的处理
+     */
+    static class ExtendTwelve{
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
 
         }
     }
