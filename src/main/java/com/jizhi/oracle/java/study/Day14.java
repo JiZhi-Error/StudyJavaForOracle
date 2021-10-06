@@ -185,14 +185,28 @@ public class Day14 {
     static class ExtendThree {
         public static void main(String[] args) {
             Random rand = new Random();
-            ArrayList<Object> objects = new ArrayList<>();
-            while (objects.size() < 10) {
+            ArrayList<Object> objects01 = new ArrayList<>();
+            while (objects01.size() < 10) {
                 int i = rand.nextInt(20) + 1;
-                if (!objects.contains(i)) {
-                    objects.add(i);
+                if (!objects01.contains(i)) {
+                    objects01.add(i);
                 }
             }
-            System.out.println(objects);
+            System.out.println(objects01);
+
+            List<String> objects02 = new ArrayList<>();
+            while (objects02.size() < 10) {
+                StringBuilder data = new StringBuilder();
+                while (data.length() < 10) {
+                    int i = rand.nextInt(124);
+                    if (i >= '0' && i <= '9' || i >= 'a' && i <= 'z' || i >= 'A' && i <= 'Z') {
+                        data.append((char) i);
+                    }
+                }
+                objects02.add(data.toString());
+            }
+            System.out.println(objects02);
+
         }
     }
 
